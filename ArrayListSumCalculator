@@ -1,0 +1,27 @@
+package com.accenture;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class ArrayListSumCalculator {
+	 public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+
+	        // Read the elements for the ArrayList
+	        System.out.print("Enter the elements for the ArrayList (space-separated): ");
+	        String[] elements = scanner.nextLine().split(" ");
+	        ArrayList<Integer> arrayList = new ArrayList<>();
+	        for (String element : elements) {
+	            arrayList.add(Integer.parseInt(element));
+	        }
+
+	        // Calculate the sum of all elements
+	        int sum = 0;
+	        for (int element : arrayList) {
+	            sum += element;
+	        }
+
+	        // Display the sum
+	        System.out.println("Sum of all elements in the ArrayList: " + sum);
+
+	        scanner.close();
+	    }
+}

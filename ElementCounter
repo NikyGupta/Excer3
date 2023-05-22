@@ -1,0 +1,40 @@
+package com.accenture;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+public class ElementCounter {
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            int element = scanner.nextInt();
+            list.add(element);
+        }
+
+        Map<Integer, Integer> countMap = new HashMap<>();
+
+        // Count the occurrence of each element
+        for (int i = 0; i < list.size(); i++) {
+            int element = list.get(i);
+            if (countMap.containsKey(element)) {
+                int count = countMap.get(element);
+                countMap.put(element, count + 1);
+            } else {
+                countMap.put(element, 1);
+            }
+        }
+
+        // Print the occurrence of each element
+        for (int i = 0; i < list.size(); i++) {
+            int element = list.get(i);
+            int count = countMap.get(element);
+            System.out.println("Element " + element + " occurs " + count + " times.");
+        }
+    }
+}

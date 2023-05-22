@@ -1,0 +1,43 @@
+package com.accenture;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class CommonElementChecker {
+	 public static boolean haveCommonElements(ArrayList<Integer> list1, ArrayList<Integer> list2) {
+	        HashSet<Integer> set = new HashSet<>(list1);
+	        for (Integer element : list2) {
+	            if (set.contains(element)) {
+	                return true;
+	            }
+	        }
+	        return false;
+	    }
+
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+
+	        System.out.println("Enter elements for the first list (separated by spaces):");
+	        ArrayList<Integer> list1 = readArrayList(scanner);
+
+	        System.out.println("Enter elements for the second list (separated by spaces):");
+	        ArrayList<Integer> list2 = readArrayList(scanner);
+
+	        boolean hasCommonElements = haveCommonElements(list1, list2);
+	        System.out.println("Do the lists have common elements? " + hasCommonElements);
+
+	        scanner.close();
+	    }
+
+	    public static ArrayList<Integer> readArrayList(Scanner scanner) {
+	        ArrayList<Integer> list = new ArrayList<>();
+	        String input = scanner.nextLine();
+	        String[] elements = input.split(" ");
+	        for (String element : elements) {
+	            int num = Integer.parseInt(element);
+	            list.add(num);
+	        }
+	        return list;
+	    }
+	}
+

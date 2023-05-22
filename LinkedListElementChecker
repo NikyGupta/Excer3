@@ -1,0 +1,34 @@
+package com.accenture;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class LinkedListElementChecker {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the elements for the LinkedList
+        System.out.print("Enter the elements for the LinkedList (space-separated): ");
+        String[] elements = scanner.nextLine().split(" ");
+        LinkedList<String> linkedList = new LinkedList<>();
+        for (String element : elements) {
+            linkedList.add(element);
+        }
+
+        // Read the element to search for
+        System.out.print("Enter the element to check: ");
+        String elementToCheck = scanner.nextLine();
+
+        // Check if the element exists in the LinkedList
+        boolean elementExists = linkedList.contains(elementToCheck);
+
+        // Display the result
+        if (elementExists) {
+            System.out.println("The element exists in the LinkedList.");
+        } else {
+            System.out.println("The element does not exist in the LinkedList.");
+        }
+
+        scanner.close();
+    }
+}
+

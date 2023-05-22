@@ -1,0 +1,38 @@
+package com.accenture;
+import java.util.Scanner;
+import java.util.TreeSet;
+public class SecondSmallestElementFinder {
+	 public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+
+	        // Read the elements for the TreeSet
+	        System.out.print("Enter the elements for the TreeSet (space-separated): ");
+	        String[] elements = scanner.nextLine().split(" ");
+	        TreeSet<Integer> treeSet = new TreeSet<>();
+	        for (String element : elements) {
+	            treeSet.add(Integer.parseInt(element));
+	        }
+
+	        // Find the second smallest element
+	        int secondSmallest = -1;
+	        if (treeSet.size() >= 2) {
+	            int count = 0;
+	            for (int element : treeSet) {
+	                if (count == 1) {
+	                    secondSmallest = element;
+	                    break;
+	                }
+	                count++;
+	            }
+	        }
+
+	        // Display the second smallest element
+	        if (secondSmallest != -1) {
+	            System.out.println("Second smallest element in the TreeSet: " + secondSmallest);
+	        } else {
+	            System.out.println("The TreeSet does not have a second smallest element.");
+	        }
+
+	        scanner.close();
+	 }    
+}

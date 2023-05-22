@@ -1,0 +1,38 @@
+package com.accenture;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+public class HashSetIntersection {
+	 public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+
+	        // Read the elements for the first HashSet
+	        System.out.print("Enter the elements for the first HashSet (space-separated): ");
+	        String[] elements1 = scanner.nextLine().split(" ");
+	        Set<String> set1 = new HashSet<>();
+	        for (String element : elements1) {
+	            set1.add(element);
+	        }
+
+	        // Read the elements for the second HashSet
+	        System.out.print("Enter the elements for the second HashSet (space-separated): ");
+	        String[] elements2 = scanner.nextLine().split(" ");
+	        Set<String> set2 = new HashSet<>();
+	        for (String element : elements2) {
+	            set2.add(element);
+	        }
+
+	        // Find the intersection of the two HashSets
+	        Set<String> intersection = new HashSet<>(set1);
+	        intersection.retainAll(set2);
+
+	        // Display the intersection
+	        System.out.println("Intersection of the two HashSets:");
+	        for (String element : intersection) {
+	            System.out.println(element);
+	        }
+
+	        scanner.close();
+	    }
+	}
+

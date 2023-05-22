@@ -1,0 +1,28 @@
+package com.accenture;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Scanner;
+public class LinkedListSorter {
+	  public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+
+	        // Read the elements for the LinkedList
+	        System.out.print("Enter the elements for the LinkedList (space-separated): ");
+	        String[] elements = scanner.nextLine().split(" ");
+	        LinkedList<Integer> linkedList = new LinkedList<>();
+	        for (String element : elements) {
+	            linkedList.add(Integer.parseInt(element));
+	        }
+
+	        // Sort the LinkedList in descending order
+	        Collections.sort(linkedList, Collections.reverseOrder());
+
+	        // Display the sorted LinkedList
+	        System.out.println("Sorted LinkedList in descending order:");
+	        for (Integer element : linkedList) {
+	            System.out.println(element);
+	        }
+
+	        scanner.close();
+	    }
+}
